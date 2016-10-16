@@ -36,13 +36,12 @@ def play_word_game():
     playing = True
 
     word = get_random_word()
-        # list() converts a string to a list; e.g. "word" > ["w", "o", "r", "d"[
+    # list() converts a string to a list; e.g. "word" > ["w", "o", "r", "d"]
     blanked_word = list("_" * len(word))
 
     while playing:
         show_word(blanked_word)
         letter = get_guess()
-        # NOTE: 'word' refers to the var within play_word_game
         found = process_letter(letter, word, blanked_word)
 
         if not found:
